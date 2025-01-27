@@ -6,10 +6,10 @@
 ### Steps 0-2 are adapted from COMP 423's [mkdocs tutorial](https://comp423-25s.github.io/resources/MkDocs/tutorial/#step-1-initialize-mkdocs).
 
 ## Step 0: Prerequisites
-
+<!-- Just adding a brief explanation on what Docker will do-->
 * VSCode: [install](https://code.visualstudio.com/) 
     * with the Dev Containers Extension: [install](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-* Docker Desktop: [install](https://www.docker.com/products/docker-desktop)
+* Docker Desktop: Needed to configure and run the container [install](https://www.docker.com/products/docker-desktop) 
 * git: [install](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Step 1: Make a Repository
@@ -39,8 +39,11 @@ git commit -m "Initial commit adding README"
 A dev container standardizes the environment for development and facilitates management of software dependencies.
 
 1. Open the helloGo directory in VSCode using File > Open Folder
+
 2. Make a .devcontainer folder in the project folder
+
 3. Make a new file inside of .devcontainer named devcontainer.json
+
 4. Fill out your dev container configuration inside devcontainer.json
 ```json
 {
@@ -59,12 +62,10 @@ A dev container standardizes the environment for development and facilitates man
     * image: Docker image (for this project, latest Go environment from Microsoft)
     * customizations: VSCode configuration, including marketplace extensions using their string identifiers
     * postCreateCommand: Command that runs post-container creation (for us, checking the version of Go)
-5. Make a file named requirements.txt in your project's root directory with the Python dependencies needed for the project. In this case, we only need mkdocs-material, which we can add by inserting the text below into requirements.txt
-```
-mkdocs-material~=9.5
-```
-6. Open Docker Desktop
-7. From the VSCode window with the project open, press Control/Command + Shift + P, then select "Dev Containers: Reopen in Container." In a few minutes, the window should reopen as a dev container.
+
+5. Open Docker Desktop
+
+6. From the VSCode window with the project open, press Control/Command + Shift + P, then select "Dev Containers: Reopen in Container." In a few minutes, the window should reopen as a dev container.
 
 ### Steps 3 and 4 are adapted from [the official Go documentation](https://go.dev/doc/tutorial/getting-started)
 
@@ -114,7 +115,7 @@ Now we are ready to go back to the console, compile, and run our code. First, we
 go build
 ```
 
-This creates an binary file with the same name "hello" as the package we are building. It is comparable to the gcc command which compiles C code into an executable file. In our case, we are using a Linux system. This means we can run our file using this command in the console:
+This creates a binary file with the same name "hello" as the package we are building. It is comparable to the gcc command which compiles C code into an executable file. In our case, we are using a Linux system. This means we can run our file using this command in the console:
 ```
 ./hello
 ```
